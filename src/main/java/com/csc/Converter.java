@@ -49,6 +49,12 @@ public class Converter {
         }
     }
 
+    // Convert the other way portfolio add on
+    public String toOunces(int pounds, int ounces) {
+        int poundsToOunces = pounds * 16;
+        return (poundsToOunces + ounces) + " ounces";
+      }
+
     // Display results for 0, 16, 18, and 36 ounces
     public static void main(String[] args) {
         Converter converter = new Converter();
@@ -74,5 +80,11 @@ public class Converter {
         System.out.println("\nDefault:");
         System.out.println("To Pounds: " + converter.toPounds());
         System.out.println("To Pounds and Ounces: " + converter.toPoundsAndOunces());
-}
+
+        //Covert the other way porfolio add on
+        System.out.println("\nConvert 0 pounds and 12 ounces:");
+        System.out.println("To Ounces: " + converter.toOunces(0, 12));
+        System.out.println("\nConvert 1 pounds and 15 ounces:");
+        System.out.println("To Ounces: " + converter.toOunces(1,15));
+    }
 }
