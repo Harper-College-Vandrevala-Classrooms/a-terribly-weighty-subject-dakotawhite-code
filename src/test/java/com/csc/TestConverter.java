@@ -1,7 +1,6 @@
 package com.csc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -72,5 +71,22 @@ public class TestConverter {
   @Test
   public void test32OuncesToPoundsAndOunces() {
     assertEquals("2 lbs 0 oz", converter.toPoundsAndOunces(32));
+  }
+
+  @Test
+  public void testToPoundsWithDefault() {
+      assertEquals("0.0000 lbs", converter.toPounds()); // Testing default add on
+  }
+
+  @Test
+  public void testToPoundsAndOuncesWithDefault() {
+      assertEquals("0 lbs 0 oz", converter.toPoundsAndOunces()); // Testing default add on
+  }
+
+  //Convert the other way prtofolio add on
+  @Test
+  public void testToOunces() {
+    assertEquals("12 ounces", converter.toOunces(0, 12));
+    assertEquals("31 ounces", converter.toOunces(1, 15));
   }
 }
